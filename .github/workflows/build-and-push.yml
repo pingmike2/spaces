@@ -4,12 +4,12 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'main/QingLong/services.json'
-      - 'main/QingLong/notify.py'
-      - 'main/QingLong/front.conf'
-      - 'main/QingLong/docker-entrypoint.sh'
-      - 'main/QingLong/README.md'
-      - 'main/QingLong/Dockerfile'
+      - 'QingLong/services.json'
+      - 'QingLong/notify.py'
+      - 'QingLong/front.conf'
+      - 'QingLong/docker-entrypoint.sh'
+      - 'QingLong/README.md'
+      - 'QingLong/Dockerfile'
   workflow_dispatch:
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./main/QingLong
+          context: ./QingLong
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/qingqing:latest
